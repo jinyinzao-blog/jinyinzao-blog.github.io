@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>John Doe</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <id>http://example.com/</id>
+  <link href="http://example.com/" rel="alternate"/>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, John Doe</rights>
+  <title>Jinyinzao</title>
+  <updated>2026-10-22T07:33:37.937Z</updated>
+  <entry>
+    <author>
+      <name>John Doe</name>
+    </author>
+    <category term="网络安全" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    <category term="科普" scheme="http://example.com/tags/%E7%A7%91%E6%99%AE/"/>
+    <category term="BadUSB" scheme="http://example.com/tags/BadUSB/"/>
+    <content>
+      <![CDATA[<p>你可能觉得，U 盘只是一个用来存文档、拷电影的“老实工具”。但在黑客眼里，一根小小的 U 盘，往往能成为攻破整个电脑系统的致命武器。</p><p>今天我们就来聊聊网络安全中非常经典的一种攻击方式：<strong>BadUSB</strong>。</p><h2 id="什么是-BadUSB？"><a href="#什么是-BadUSB？" class="headerlink" title="什么是 BadUSB？"></a>什么是 BadUSB？</h2><p>BadUSB，直译过来就是“坏 USB”。它并不是一种新型的电脑病毒，而是一种<strong>硬件级别的伪装技术</strong>。</p><p>正常情况下，当你把 U 盘插进电脑，电脑会识别它为一个“存储设备”。但 BadUSB 的原理是：黑客通过重新刷写 U 盘内部的控制芯片，让 U 盘向电脑“撒谎”，伪装成别的设备——<strong>最常见的就是伪装成一个“键盘”</strong>。</p><h2 id="它为什么危险？"><a href="#它为什么危险？" class="headerlink" title="它为什么危险？"></a>它为什么危险？</h2><p>电脑天生是非常信任键盘的，因为键盘输入的命令都是人敲出来的。如果 U 盘伪装成了键盘，电脑就会毫无防备地接收它的指令。</p><p>当你把这根“特制 U 盘”插进电脑的瞬间（甚至不需要你点任何文件），它就会以极快的速度自动模拟敲击键盘。比如：</p><ol><li>瞬间按下 <code>Win + R</code> 打开运行窗口。</li><li>自动输入一段短小精悍的 PowerShell 恶意代码。</li><li>按下回车，悄悄从网上下载木马病毒并运行。</li></ol><p>整个过程可能不到 <strong>3 秒钟</strong>。当你还在盯着屏幕发呆时，电脑的控制权可能已经易主了。</p><h2 id="如何防范-BadUSB？"><a href="#如何防范-BadUSB？" class="headerlink" title="如何防范 BadUSB？"></a>如何防范 BadUSB？</h2><p>听起来很可怕，但只要养成良好的安全习惯，完全可以防范：</p><ol><li><strong>绝对不要捡地上的 U 盘</strong>：这在安全圈叫“USB 钓鱼”，是黑客故意丢在公司停车场或显眼处的陷阱。</li><li><strong>避免使用不明来源的 U 盘</strong>：如果必须用，先插在隔离的虚拟机或不重要的老电脑上看看反应。</li><li><strong>关闭电脑的“自动播放”功能</strong>：这能阻断一部分通过插入自动运行脚本的攻击。</li><li><strong>使用物理防拔锁</strong>：很多安全公司会在电脑 USB 接口上插入物理锁，防止陌生 U 盘接入。</li></ol><hr><p><strong>总结</strong>：在网络安全的世界里，任何连接的未知硬件都可能成为突破口。保持警惕，不要让你的好奇心和贪便宜的心理，给黑客留下了可乘之机.</p>]]>
+    </content>
+    <id>http://example.com/2026/10/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E7%A2%8E%E7%A2%8E%E5%BF%B5/</id>
+    <link href="http://example.com/2026/10/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <published>2026-10-22T06:15:10.000Z</published>
+    <summary>
+      <![CDATA[<p>你可能觉得，U 盘只是一个用来存文档、拷电影的“老实工具”。但在黑客眼里，一根小小的 U 盘，往往能成为攻破整个电脑系统的致命武器。</p>
+<p>今天我们就来聊聊网络安全中非常经典的一种攻击方式：<strong>BadUSB</strong>。</p>
+<h2 id="什]]>
+    </summary>
+    <title>警惕身边的“伪装者”：BadUSB 科普</title>
+    <updated>2026-10-22T07:33:37.937Z</updated>
+  </entry>
+</feed>
