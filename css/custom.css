@@ -1,0 +1,66 @@
+:root {
+  /* 背景与表面 */
+  --bg-base: #0f1115;          /* 极客深空背景 */
+  --bg-surface: #1a1d24;       /* 卡片表面 */
+  --bg-surface-elevated: #22262f; /* 悬浮或高亮表面 */
+  
+  /* 文本与边框 */
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  
+  /* 强调色（海洋蓝/科技紫） */
+  --accent-main: #38bdf8;      
+  --accent-hover: #818cf8;     
+  
+  /* 毛玻璃模糊值 */
+  --glass-blur: blur(24px);    
+  --glass-bg: rgba(15, 17, 21, 0.7);
+}
+
+/* 1. 全局背景与字体 */
+body {
+  background-color: var(--bg-base) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 2. 卡片/文章容器 */
+.post, .card-widget, .sidebar-inner {
+  background: var(--bg-surface) !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  padding: 24px !important;
+}
+
+/* 3. 毛玻璃效果（用于导航栏、悬浮窗） */
+.header, .floating-panel {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* 4. 链接与强调色 */
+a, .post-meta, .page-nav {
+  color: var(--accent-main) !important;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--accent-hover) !important;
+}
+
+/* 5. 代码块与引用 */
+pre, code {
+  background: var(--bg-surface-elevated) !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: #f1f5f9 !important;
+}
+blockquote {
+  border-left: 4px solid var(--accent-main) !important;
+  background: rgba(56, 189, 248, 0.05) !important;
+  padding: 12px 20px !important;
+  border-radius: 0 8px 8px 0 !important;
+}
