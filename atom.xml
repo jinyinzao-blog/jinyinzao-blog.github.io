@@ -9,7 +9,7 @@
   <link href="https://jinyinzao-blog.github.io/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, Jinyinzao</rights>
   <title>Jinyinzao</title>
-  <updated>2026-10-23T05:26:24.461Z</updated>
+  <updated>2026-10-23T05:31:19.492Z</updated>
   <entry>
     <author>
       <name>Jinyinzao</name>
@@ -23,10 +23,10 @@
     <link href="https://jinyinzao-blog.github.io/2026/10/23/frontend-security/"/>
     <published>2026-10-23T04:00:00.000Z</published>
     <summary>
-      <![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>很多开发者认为，Web 安全是后端和运维的专属领域，前端只需要写写 UI 即可。但实际上，在前端工程化高度发达的今天，前端同样是防御]]>
+      <![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在现代前端工程体系中，安全防护常被误认为是后端与运维的专属职责。实际上，前端应用往往是抵御 XSS（跨站脚本攻击）与]]>
     </summary>
     <title>前端视角下的 XSS 与 CSRF 防御实践</title>
-    <updated>2026-10-23T05:26:24.461Z</updated>
+    <updated>2026-10-23T05:31:19.492Z</updated>
   </entry>
   <entry>
     <author>
