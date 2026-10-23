@@ -41,7 +41,7 @@
 <meta property="og:description" content="02     SHREDLINE               BANK OF WEB     $1,000,000.00     FOR YOUR STRESS                 重新拿一张纸       const container = document.getElementById('game-container');   const p" data-stellar-page-meta="">
 <meta property="og:locale" content="en_US" data-stellar-page-meta="">
 <meta property="article:published_time" content="2026-10-22T14:30:00.000Z" data-stellar-page-meta="">
-<meta property="article:modified_time" content="2026-10-22T14:13:14.362Z" data-stellar-page-meta="">
+<meta property="article:modified_time" content="2026-10-23T02:48:16.004Z" data-stellar-page-meta="">
 <meta property="article:author" content="Jinyinzao" data-stellar-page-meta="">
 <meta name="twitter:card" content="summary" data-stellar-page-meta=""><meta name="twitter:title" content="游戏" data-stellar-page-meta="">
   
@@ -271,7 +271,7 @@
   <span class="sep"></span>
   <a class="cap breadcrumb" href="/game/">游戏</a>
   </div></div><div class="meta-row">
-<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-22T14:30:00.000Z">2026-10-22</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-22T14:13:14.362Z">2026-10-22</time></span></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-22T14:30:00.000Z">2026-10-22</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-23T02:48:16.004Z">2026-10-23</time></span></div>
 </div></div>
     
     <div class="bottom only-title">
@@ -301,8 +301,8 @@
     <div style="font-size:10px; color:#999; margin-top:8px; border-top:1px dashed #ccc; padding-top:5px; width:80%; text-align:center;">FOR YOUR STRESS</div>
   </div>
 
-  <!-- 纸屑容器 -->
-  <div id="shreds-container" style="position:absolute; top:280px; left:0; width:100%; height:300px; pointer-events:none;"></div>
+  <!-- 纸屑容器 (设置为全屏覆盖，方便绝对定位) -->
+  <div id="shreds-container" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index: 15;"></div>
 
   <!-- 重新开始按钮 -->
   <button id="reset-btn" style="position:absolute; bottom:30px; padding:10px 20px; background:#333; color:#fff; border:none; border-radius:8px; cursor:pointer; font-size:14px; display:none; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition: all 0.2s; z-index: 20;">重新拿一张纸</button>
@@ -318,8 +318,6 @@
   
   let isDragging = false;
   let hasShredded = false;
-  
-  // 记录鼠标按下时，鼠标相对于支票左上角的偏移量
   let offsetX = 0;
   let offsetY = 0;
 
@@ -327,28 +325,21 @@
     if (hasShredded) return;
     isDragging = true;
     paper.style.cursor = 'grabbing';
-    
-    // 计算偏移量
     const rect = paper.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
-    
-    paper.setPointerCapture(e.pointerId); // 锁定指针
+    paper.setPointerCapture(e.pointerId);
   });
 
   paper.addEventListener('pointermove', (e) => {
     if (!isDragging || hasShredded) return;
-    
-    // 计算父容器的位置
     const containerRect = container.getBoundingClientRect();
-    
-    // 计算新的 left 和 top
     let newLeft = e.clientX - containerRect.left - offsetX;
     let newTop = e.clientY - containerRect.top - offsetY;
     
     paper.style.left = `${newLeft}px`;
     paper.style.top = `${newTop}px`;
-    paper.style.marginLeft = '0'; // 清除初始的居中 margin
+    paper.style.marginLeft = '0'; 
     
     checkCollision();
   });
@@ -362,8 +353,6 @@
   function checkCollision() {
     const pRect = paper.getBoundingClientRect();
     const sRect = shredder.getBoundingClientRect();
-    
-    // 检测是否碰到碎纸机
     if (pRect.top < sRect.bottom && pRect.bottom > sRect.top && pRect.left < sRect.right && pRect.right > sRect.left) {
       shredPaper();
     }
@@ -375,22 +364,26 @@
     paper.style.display = 'none'; 
     resetBtn.style.display = 'block'; 
 
-    // 获取碎纸机在容器中的相对位置，用于生成纸屑
     const containerRect = container.getBoundingClientRect();
     const sRect = shredder.getBoundingClientRect();
+    
+    // 精准计算碎纸机出纸口的坐标
     const startX = sRect.left - containerRect.left + sRect.width / 2;
+    const startY = sRect.bottom - containerRect.top;
 
     for (let i = 0; i < 60; i++) {
       setTimeout(() => {
         const shred = document.createElement('div');
         shred.style.position = 'absolute';
         shred.style.width = '6px';
-        shred.style.height = '20px';
+        shred.style.height = '18px';
         shred.style.background = '#fff';
-        shred.style.borderRadius = '2px';
+        shred.style.borderRadius = '1px';
         shred.style.boxShadow = '0 1px 3px rgba(0,0,0,0.2)';
-        shred.style.left = `calc(${startX}px + ${(Math.random() - 0.5) * 160}px)`;
-        shred.style.top = '250px'; 
+        
+        // 让纸屑从出纸口宽度范围内落下
+        shred.style.left = `calc(${startX}px + ${(Math.random() - 0.5) * 180}px)`;
+        shred.style.top = `${startY}px`; 
         
         const duration = 0.8 + Math.random() * 1.5;
         shred.style.transition = `all ${duration}s cubic-bezier(0.25, 1, 0.5, 1)`;
@@ -398,7 +391,8 @@
         shredsContainer.appendChild(shred);
         
         requestAnimationFrame(() => {
-          shred.style.transform = `translateY(${100 + Math.random() * 150}px) rotateX(${Math.random()*180}deg) rotateY(${Math.random()*180}deg)`;
+          // 向下掉落，并加入一点随机旋转
+          shred.style.transform = `translateY(${80 + Math.random() * 120}px) rotateX(${Math.random()*180}deg) rotateY(${Math.random()*180}deg)`;
           shred.style.opacity = '0';
         });
 
@@ -412,7 +406,7 @@
     paper.style.display = 'flex';
     paper.style.left = '50%';
     paper.style.top = '120px';
-    paper.style.marginLeft = '-100px'; // 恢复居中
+    paper.style.marginLeft = '-100px';
     paper.style.cursor = 'grab';
     shredsContainer.innerHTML = '';
     resetBtn.style.display = 'none';
