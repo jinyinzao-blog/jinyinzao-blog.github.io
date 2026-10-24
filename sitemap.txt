@@ -1,9 +1,10 @@
+https://jinyinzao-blog.github.io/lab/
+https://jinyinzao-blog.github.io/spider/
 https://jinyinzao-blog.github.io/pixel-security/
 https://jinyinzao-blog.github.io/city-roads/
 https://jinyinzao-blog.github.io/three/
 https://jinyinzao-blog.github.io/game/
 https://jinyinzao-blog.github.io/receipt/
-https://jinyinzao-blog.github.io/lab/
 https://jinyinzao-blog.github.io/portfolio/
 https://jinyinzao-blog.github.io/2026/10/23/frontend-security/
 https://jinyinzao-blog.github.io/2026/10/22/Web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/
