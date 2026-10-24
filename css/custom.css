@@ -64,3 +64,28 @@ blockquote {
   padding: 12px 20px !important;
   border-radius: 0 8px 8px 0 !important;
 }
+
+
+
+/* 优化侧边栏颜值 */
+.l_left {
+  background: rgba(25, 28, 36, 0.85) !important; /* 深色半透明底 */
+  backdrop-filter: blur(20px); /* 毛玻璃效果 */
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 让菜单项更紧凑，更像草图里的列表 */
+.leftbar-menu-item a {
+  font-size: 15px !important;
+  padding: 12px 20px !important;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+/* 悬浮或激活时的状态 */
+.leftbar-menu-item.active a, 
+.leftbar-menu-item a:hover {
+  background: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+  transform: translateX(5px); /* 鼠标放上去微微向右滑动 */
+}
