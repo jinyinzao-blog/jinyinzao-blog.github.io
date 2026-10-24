@@ -33,15 +33,15 @@
     })();
   </script>
 
-  <meta name="description" content="#three-container {     width: 100%;     height: 80vh;     border-radius: 16px;     overflow: hidden;     background: #0f1115; /* 和你博客深色背景一致 */     position: relative;   }            // 1. 初始化场景、相机" data-stellar-page-meta="">
+  <meta name="description" content="/* 包裹层，为了让返回按钮绝对定位在画布上 */   .three-wrapper {     position: relative;     width: 100%;     height: 80vh;     margin-top: 20px;   }    /* 悬浮的返回按钮 */   .back-to-lab {     position: absolute;     top:" data-stellar-page-meta="">
 <meta property="og:type" content="website" data-stellar-page-meta="">
 <meta property="og:title" content="3D 赛博星球" data-stellar-page-meta="">
 <meta property="og:url" content="https://jinyinzao-blog.github.io/three/" data-stellar-page-meta="">
 <meta property="og:site_name" content="Jinyinzao" data-stellar-page-meta="">
-<meta property="og:description" content="#three-container {     width: 100%;     height: 80vh;     border-radius: 16px;     overflow: hidden;     background: #0f1115; /* 和你博客深色背景一致 */     position: relative;   }            // 1. 初始化场景、相机" data-stellar-page-meta="">
+<meta property="og:description" content="/* 包裹层，为了让返回按钮绝对定位在画布上 */   .three-wrapper {     position: relative;     width: 100%;     height: 80vh;     margin-top: 20px;   }    /* 悬浮的返回按钮 */   .back-to-lab {     position: absolute;     top:" data-stellar-page-meta="">
 <meta property="og:locale" content="en_US" data-stellar-page-meta="">
 <meta property="article:published_time" content="2026-10-24T04:00:00.000Z" data-stellar-page-meta="">
-<meta property="article:modified_time" content="2026-10-24T05:25:25.307Z" data-stellar-page-meta="">
+<meta property="article:modified_time" content="2026-10-24T12:29:26.183Z" data-stellar-page-meta="">
 <meta property="article:author" content="Jinyinzao" data-stellar-page-meta="">
 <meta name="twitter:card" content="summary" data-stellar-page-meta=""><meta name="twitter:title" content="3D 赛博星球" data-stellar-page-meta="">
   
@@ -68,7 +68,7 @@
 
   
 
-  <script type="application/ld+json" data-stellar-page-meta="">{"@context":"https://schema.org","@type":"Website","@id":"https://jinyinzao-blog.github.io/three/","author":{"@type":"Person","name":"Jinyinzao","sameAs":[]},"name":"3D 赛博星球","description":"\n\n  #three-container {\n    width: 100%;\n    height: 80vh;\n    border-radius: 16px;\n    overflow: hidden;\n    background: #0f1115; /* 和你博客深色背景一致 */\n    position: relative;\n  }\n\n\n\n\n\n\n\n\n\n  // 1. 初始化场景...","url":"https://jinyinzao-blog.github.io/three/"}</script>
+  <script type="application/ld+json" data-stellar-page-meta="">{"@context":"https://schema.org","@type":"Website","@id":"https://jinyinzao-blog.github.io/three/","author":{"@type":"Person","name":"Jinyinzao","sameAs":[]},"name":"3D 赛博星球","description":"\n\n  /* 包裹层，为了让返回按钮绝对定位在画布上 */\n  .three-wrapper {\n    position: relative;\n    width: 100%;\n    height: 80vh;\n    margin-top: 20px;\n  }\n\n  /* 悬浮的返回按钮 */\n  .back-to-lab {\n    position: absolute;\n    t...","url":"https://jinyinzao-blog.github.io/three/"}</script>
   
 
   <link rel="stylesheet" href="/css/stellar-icons.css?v=7c185ad1a9a79674">
@@ -289,7 +289,7 @@
   <span class="sep"></span>
   <a class="cap breadcrumb" href="/three/">3D 赛博星球</a>
   </div></div><div class="meta-row">
-<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-24T04:00:00.000Z">2026-10-24</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-24T05:25:25.307Z">2026-10-24</time></span></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-24T04:00:00.000Z">2026-10-24</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-24T12:29:26.183Z">2026-10-24</time></span></div>
 </div></div>
     
     <div class="bottom only-title">
@@ -304,18 +304,59 @@
   </div></div>
 <article class="md-text content slide-up">
 <style>
-  #three-container {
+  /* 包裹层，为了让返回按钮绝对定位在画布上 */
+  .three-wrapper {
+    position: relative;
     width: 100%;
     height: 80vh;
+    margin-top: 20px;
+  }
+
+  /* 悬浮的返回按钮 */
+  .back-to-lab {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9999; /* 确保在 canvas 上层 */
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(26, 29, 36, 0.85);
+    backdrop-filter: blur(10px);
+    color: #38bdf8;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .back-to-lab:hover {
+    background: #38bdf8;
+    color: #0f1115;
+    transform: translateX(-5px);
+  }
+
+  #three-container {
+    width: 100%;
+    height: 100%;
     border-radius: 16px;
     overflow: hidden;
-    background: #0f1115; /* 和你博客深色背景一致 */
-    position: relative;
+    background: #0f1115;
   }
 </style>
 
-<!-- 3D 画布容器 -->
-<div id="three-container"></div>
+<div class="three-wrapper">
+  <!-- 返回按钮 -->
+  <a href="/lab/" class="back-to-lab">
+    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    返回沙盒
+  </a>
+
+  <!-- 3D 画布容器 -->
+  <div id="three-container"></div>
+</div>
 
 <!-- 引入 Three.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -333,10 +374,10 @@
   renderer.setPixelRatio(window.devicePixelRatio);
   container.appendChild(renderer.domElement);
 
-  // 2. 创建几何体（一个由线条组成的二十面体，像能量球）
+  // 2. 创建几何体（二十面体能量球）
   const geometry = new THREE.IcosahedronGeometry(8, 2);
   const material = new THREE.MeshBasicMaterial({ 
-    color: 0x38bdf8, // 你的博客强调色：海洋蓝
+    color: 0x38bdf8, 
     wireframe: true, 
     transparent: true,
     opacity: 0.3 
@@ -344,7 +385,7 @@
   const sphere = new THREE.Mesh(geometry, material);
   scene.add(sphere);
 
-  // 3. 添加一些漂浮的粒子
+  // 3. 添加漂浮粒子
   const particlesGeo = new THREE.BufferGeometry();
   const particlesCount = 1000;
   const posArray = new Float32Array(particlesCount * 3);
@@ -354,7 +395,7 @@
   particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
   const particlesMat = new THREE.PointsMaterial({
     size: 0.1,
-    color: 0x818cf8, // 科技紫
+    color: 0x818cf8, 
     transparent: true,
     opacity: 0.8
   });
@@ -364,14 +405,9 @@
   // 4. 动画循环
   function animate() {
     requestAnimationFrame(animate);
-    
-    // 让球体自转
     sphere.rotation.x += 0.002;
     sphere.rotation.y += 0.003;
-    
-    // 让粒子缓慢飘动
     particles.rotation.y -= 0.0005;
-
     renderer.render(scene, camera);
   }
   animate();
