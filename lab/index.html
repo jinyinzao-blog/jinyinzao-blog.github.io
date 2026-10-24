@@ -41,7 +41,7 @@
 <meta property="og:description" content="/* 1. 基础布局：四周留白，让卡片浮起来 */   #lab-container {     display: flex;     gap: 20px;     height: 100vh;     width: 100%;     padding: 20px;     box-sizing: border-box;     overflow: hidden;     backgrou" data-stellar-page-meta="">
 <meta property="og:locale" content="en_US" data-stellar-page-meta="">
 <meta property="article:published_time" content="2026-10-24T04:00:00.000Z" data-stellar-page-meta="">
-<meta property="article:modified_time" content="2026-10-24T14:38:13.165Z" data-stellar-page-meta="">
+<meta property="article:modified_time" content="2026-10-24T14:44:00.494Z" data-stellar-page-meta="">
 <meta property="article:author" content="Jinyinzao" data-stellar-page-meta="">
 <meta name="twitter:card" content="summary" data-stellar-page-meta=""><meta name="twitter:title" content="lab" data-stellar-page-meta="">
   
@@ -289,7 +289,7 @@
   <span class="sep"></span>
   <a class="cap breadcrumb" href="/lab/">lab</a>
   </div></div><div class="meta-row">
-<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-24T04:00:00.000Z">2026-10-24</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-24T14:38:13.165Z">2026-10-24</time></span></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-24T04:00:00.000Z">2026-10-24</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-24T14:44:00.494Z">2026-10-24</time></span></div>
 </div></div>
     
     <div class="bottom only-title">
@@ -460,6 +460,7 @@
   <aside class="lab-sidebar">
     <h2>Playground</h2>
     <div class="lab-menu-item active" data-target="section-home">首页</div>
+    <div class="lab-menu-item" data-target="section-spider">赛博蜘蛛</div> <!-- 新增菜单 -->
     <div class="lab-menu-item" data-target="section-receipt">今日小票</div>
     <div class="lab-menu-item" data-target="section-city">城市路网</div>
     <div class="lab-menu-item" data-target="section-three">3D星球</div>
@@ -471,7 +472,14 @@
     <section class="lab-section" id="section-home">
       <h1>Jinyinzao's Lab</h1>
       <p>欢迎来到我的lab。向下滚动，探索我构建的每一个小项目。</p>
-      <div class="lab-card" onclick="document.getElementById('section-receipt').scrollIntoView({behavior: 'smooth'})">开始探索 ↓</div>
+      <div class="lab-card" onclick="document.getElementById('section-spider').scrollIntoView({behavior: 'smooth'})">开始探索 ↓</div>
+    </section>
+
+    <!-- 赛博蜘蛛区块 (新增区块) -->
+    <section class="lab-section" id="section-spider">
+      <h1>赛博蜘蛛网络</h1>
+      <p>原生 JS 与 Canvas 绘制，将提示词编织成一张巨大的网，蜘蛛在词块间游走。</p>
+      <div class="lab-card" onclick="window.location.href='/spider/'">进入蜘蛛网络 →</div>
     </section>
 
     <!-- 今日小票区块 -->
@@ -559,7 +567,7 @@
       <button type="button" class="cap-action ui-interactive card-hover card-hover--spotlight" data-shell-action="toggle-toc" aria-label="Toggle table of contents" aria-pressed="false"><span class="ui-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></span></button>
     </div>
   
-  <div class="widget-body"><ol class="toc ui-collection-adapter"><li class="toc-item toc-level-2"><a class="toc-link ui-interactive" href="#lab-container"><span class="toc-text">Playground</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-home"><span class="toc-text">Jinyinzao&#39;s Lab</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-receipt"><span class="toc-text">今日消费小票</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-city"><span class="toc-text">城市路网</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-three"><span class="toc-text">3D 赛博星球</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-pixel"><span class="toc-text">像素化网络安全</span></a></li></ol></div>
+  <div class="widget-body"><ol class="toc ui-collection-adapter"><li class="toc-item toc-level-2"><a class="toc-link ui-interactive" href="#lab-container"><span class="toc-text">Playground</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-home"><span class="toc-text">Jinyinzao&#39;s Lab</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-spider"><span class="toc-text">赛博蜘蛛网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-receipt"><span class="toc-text">今日消费小票</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-city"><span class="toc-text">城市路网</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-three"><span class="toc-text">3D 赛博星球</span></a></li><li class="toc-item toc-level-1"><a class="toc-link ui-interactive" href="#section-pixel"><span class="toc-text">像素化网络安全</span></a></li></ol></div>
   <div class="widget-footer"><a class="top ui-interactive" onclick="util.scrollTop()"><span class="ui-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="currentColor" d="M20.536 3.464C22 4.93 22 7.286 22 12s0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2s7.071 0 8.535 1.464" opacity=".5"/><path fill="currentColor" d="M9.53 12.03a.75.75 0 0 1-1.06-1.06l3-3a.75.75 0 0 1 1.06 0l3 3a.75.75 0 1 1-1.06 1.06L12 9.56z"/><path fill="currentColor" d="M9.53 16.03a.75.75 0 0 1-1.06-1.06l3-3a.75.75 0 0 1 1.06 0l3 3a.75.75 0 1 1-1.06 1.06L12 13.56z"/></svg></span><span>Scroll to Top</span></a><a class="buttom ui-interactive" onclick="util.scrollComment()"><span class="ui-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M7.25 9A.75.75 0 0 1 8 8.25h8a.75.75 0 0 1 0 1.5H8A.75.75 0 0 1 7.25 9m0 3.5a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5H8a.75.75 0 0 1-.75-.75"/></svg></span><span>Join Discussion</span></a></div>
 </widget>
 
