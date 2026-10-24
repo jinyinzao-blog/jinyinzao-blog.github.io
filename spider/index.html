@@ -33,15 +33,15 @@
     })();
   </script>
 
-  <meta name="description" content=".spider-wrapper {     margin: -20px -24px;      height: calc(100vh - 70px);      background: #050505;     border-radius: 0;     overflow: hidden;   }   .spider-wrapper iframe {     width: 100%;" data-stellar-page-meta="">
+  <meta name="description" content="/* 页面中央的启动按钮 */   .spider-launch-btn {     display: flex;     justify-content: center;     align-items: center;     margin: 60px auto;     padding: 16px 40px;     background: #38bdf8;     color: #" data-stellar-page-meta="">
 <meta property="og:type" content="website" data-stellar-page-meta="">
 <meta property="og:title" content="赛博蜘蛛" data-stellar-page-meta="">
 <meta property="og:url" content="https://jinyinzao-blog.github.io/spider/" data-stellar-page-meta="">
 <meta property="og:site_name" content="Jinyinzao" data-stellar-page-meta="">
-<meta property="og:description" content=".spider-wrapper {     margin: -20px -24px;      height: calc(100vh - 70px);      background: #050505;     border-radius: 0;     overflow: hidden;   }   .spider-wrapper iframe {     width: 100%;" data-stellar-page-meta="">
+<meta property="og:description" content="/* 页面中央的启动按钮 */   .spider-launch-btn {     display: flex;     justify-content: center;     align-items: center;     margin: 60px auto;     padding: 16px 40px;     background: #38bdf8;     color: #" data-stellar-page-meta="">
 <meta property="og:locale" content="en_US" data-stellar-page-meta="">
 <meta property="article:published_time" content="2026-10-24T04:00:00.000Z" data-stellar-page-meta="">
-<meta property="article:modified_time" content="2026-10-24T15:20:30.551Z" data-stellar-page-meta="">
+<meta property="article:modified_time" content="2026-10-24T15:24:15.620Z" data-stellar-page-meta="">
 <meta property="article:author" content="Jinyinzao" data-stellar-page-meta="">
 <meta name="twitter:card" content="summary" data-stellar-page-meta=""><meta name="twitter:title" content="赛博蜘蛛" data-stellar-page-meta="">
   
@@ -68,7 +68,7 @@
 
   
 
-  <script type="application/ld+json" data-stellar-page-meta="">{"@context":"https://schema.org","@type":"Website","@id":"https://jinyinzao-blog.github.io/spider/","author":{"@type":"Person","name":"Jinyinzao","sameAs":[]},"name":"赛博蜘蛛","description":"\n\n  .spider-wrapper {\n    margin: -20px -24px; \n    height: calc(100vh - 70px); \n    background: #050505;\n    border-radius: 0;\n    overflow: hidden;\n  }\n  .spider-wrapper iframe {\n    width: 100%;...","url":"https://jinyinzao-blog.github.io/spider/"}</script>
+  <script type="application/ld+json" data-stellar-page-meta="">{"@context":"https://schema.org","@type":"Website","@id":"https://jinyinzao-blog.github.io/spider/","author":{"@type":"Person","name":"Jinyinzao","sameAs":[]},"name":"赛博蜘蛛","description":"\n\n  /* 页面中央的启动按钮 */\n  .spider-launch-btn {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin: 60px auto;\n    padding: 16px 40px;\n    background: #38bdf8;\n    color...","url":"https://jinyinzao-blog.github.io/spider/"}</script>
   
 
   <link rel="stylesheet" href="/css/stellar-icons.css?v=7c185ad1a9a79674">
@@ -289,7 +289,7 @@
   <span class="sep"></span>
   <a class="cap breadcrumb" href="/spider/">赛博蜘蛛</a>
   </div></div><div class="meta-row">
-<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-24T04:00:00.000Z">2026-10-24</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-24T15:20:30.551Z">2026-10-24</time></span></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-24T04:00:00.000Z">2026-10-24</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-24T15:24:15.620Z">2026-10-24</time></span></div>
 </div></div>
     
     <div class="bottom only-title">
@@ -304,27 +304,143 @@
   </div></div>
 <article class="md-text content slide-up">
 <style>
-  .spider-wrapper {
-    margin: -20px -24px; 
-    height: calc(100vh - 70px); 
-    background: #050505;
-    border-radius: 0;
-    overflow: hidden;
+  /* 页面中央的启动按钮 */
+  .spider-launch-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+    padding: 16px 40px;
+    background: #38bdf8;
+    color: #0f1115;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4);
+    transition: all 0.3s;
+    width: fit-content;
   }
-  .spider-wrapper iframe {
+  .spider-launch-btn:hover {
+    transform: translateY(-5px);
+    background: #818cf8;
+    box-shadow: 0 12px 40px rgba(129, 140, 248, 0.6);
+  }
+
+  /* 弹窗遮罩层 */
+  .spider-modal-overlay {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); /* 半透明黑底 */
+    backdrop-filter: blur(8px); /* 毛玻璃效果 */
+    z-index: 999999; /* 极高优先级，盖住导航栏 */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .spider-modal-overlay.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  /* 弹窗内容容器 */
+  .spider-modal-content {
+    position: relative;
+    width: 90vw;
+    height: 85vh;
+    background: #050505;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+  .spider-modal-overlay.active .spider-modal-content {
+    transform: scale(1);
+  }
+
+  /* 弹窗内的 iframe */
+  .spider-modal-content iframe {
     width: 100%;
     height: 100%;
     border: none;
   }
+
+  /* 右上角关闭按钮 */
+  .spider-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000000;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+  }
+  .spider-close-btn:hover {
+    background: #ff007f;
+    transform: rotate(90deg);
+  }
+  
+  /* 禁止背景滚动的类 */
+  .no-scroll {
+    overflow: hidden !important;
+  }
 </style>
 
-<div class="spider-wrapper">
-  <iframe 
-    src="https://shimmering-begonia-cc76b7.netlify.app" 
-    allow="fullscreen"
-    sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
-  </iframe>
+<!-- 页面上的启动按钮 -->
+<div class="spider-launch-btn" id="openSpiderBtn">
+  🕷️ 启动赛博蜘蛛网络
 </div>
+
+<!-- 弹窗结构 -->
+<div class="spider-modal-overlay" id="spiderModal">
+  <div class="spider-modal-content">
+    <div class="spider-close-btn" id="closeSpiderBtn">×</div>
+    <iframe 
+      src="https://shimmering-begonia-cc76b7.netlify.app" 
+      allow="fullscreen"
+      sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+    </iframe>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('spiderModal');
+  const openBtn = document.getElementById('openSpiderBtn');
+  const closeBtn = document.getElementById('closeSpiderBtn');
+
+  // 打开弹窗
+  openBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+    document.body.classList.add('no-scroll'); // 禁止背景滚动
+  });
+
+  // 点击关闭按钮
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  });
+
+  // 点击弹窗外的遮罩层也可以关闭
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    }
+  });
+</script>
 </article>
 
   <div class="related-wrap md-text slide-up" id="comments">
