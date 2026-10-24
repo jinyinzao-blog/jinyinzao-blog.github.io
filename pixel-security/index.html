@@ -33,15 +33,15 @@
     })();
   </script>
 
-  <meta name="description" content="#pixel-security-container {     width: 100%;     height: 85vh;     min-height: 600px;     background: #0a0a0f; /* 极客深空背景 */     position: relative;     overflow: hidden;     border-radius: 12px;" data-stellar-page-meta="">
+  <meta name="description" content="/* 包裹层，用于定位悬浮按钮 */   .pixel-wrapper {     position: relative;     width: 100%;     height: 85vh;     min-height: 600px;     margin-top: 20px;     border-radius: 12px;     overflow: hidden;   }" data-stellar-page-meta="">
 <meta property="og:type" content="website" data-stellar-page-meta="">
 <meta property="og:title" content="像素化网络安全" data-stellar-page-meta="">
 <meta property="og:url" content="https://jinyinzao-blog.github.io/pixel-security/" data-stellar-page-meta="">
 <meta property="og:site_name" content="Jinyinzao" data-stellar-page-meta="">
-<meta property="og:description" content="#pixel-security-container {     width: 100%;     height: 85vh;     min-height: 600px;     background: #0a0a0f; /* 极客深空背景 */     position: relative;     overflow: hidden;     border-radius: 12px;" data-stellar-page-meta="">
+<meta property="og:description" content="/* 包裹层，用于定位悬浮按钮 */   .pixel-wrapper {     position: relative;     width: 100%;     height: 85vh;     min-height: 600px;     margin-top: 20px;     border-radius: 12px;     overflow: hidden;   }" data-stellar-page-meta="">
 <meta property="og:locale" content="en_US" data-stellar-page-meta="">
 <meta property="article:published_time" content="2026-10-24T04:00:00.000Z" data-stellar-page-meta="">
-<meta property="article:modified_time" content="2026-10-24T10:35:26.395Z" data-stellar-page-meta="">
+<meta property="article:modified_time" content="2026-10-24T12:35:43.671Z" data-stellar-page-meta="">
 <meta property="article:author" content="Jinyinzao" data-stellar-page-meta="">
 <meta name="twitter:card" content="summary" data-stellar-page-meta=""><meta name="twitter:title" content="像素化网络安全" data-stellar-page-meta="">
   
@@ -68,7 +68,7 @@
 
   
 
-  <script type="application/ld+json" data-stellar-page-meta="">{"@context":"https://schema.org","@type":"Website","@id":"https://jinyinzao-blog.github.io/pixel-security/","author":{"@type":"Person","name":"Jinyinzao","sameAs":[]},"name":"像素化网络安全","description":"\n\n  #pixel-security-container {\n    width: 100%;\n    height: 85vh;\n    min-height: 600px;\n    background: #0a0a0f; /* 极客深空背景 */\n    position: relative;\n    overflow: hidden;\n    border-radius: 12px...","url":"https://jinyinzao-blog.github.io/pixel-security/"}</script>
+  <script type="application/ld+json" data-stellar-page-meta="">{"@context":"https://schema.org","@type":"Website","@id":"https://jinyinzao-blog.github.io/pixel-security/","author":{"@type":"Person","name":"Jinyinzao","sameAs":[]},"name":"像素化网络安全","description":"\n\n  /* 包裹层，用于定位悬浮按钮 */\n  .pixel-wrapper {\n    position: relative;\n    width: 100%;\n    height: 85vh;\n    min-height: 600px;\n    margin-top: 20px;\n    border-radius: 12px;\n    overflow: hidden;\n  }\n...","url":"https://jinyinzao-blog.github.io/pixel-security/"}</script>
   
 
   <link rel="stylesheet" href="/css/stellar-icons.css?v=7c185ad1a9a79674">
@@ -289,7 +289,7 @@
   <span class="sep"></span>
   <a class="cap breadcrumb" href="/pixel-security/">像素化网络安全</a>
   </div></div><div class="meta-row">
-<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-24T04:00:00.000Z">2026-10-24</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-24T10:35:26.395Z">2026-10-24</time></span></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2026-10-24T04:00:00.000Z">2026-10-24</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-10-24T12:35:43.671Z">2026-10-24</time></span></div>
 </div></div>
     
     <div class="bottom only-title">
@@ -304,21 +304,65 @@
   </div></div>
 <article class="md-text content slide-up">
 <style>
-  #pixel-security-container {
+  /* 包裹层，用于定位悬浮按钮 */
+  .pixel-wrapper {
+    position: relative;
     width: 100%;
     height: 85vh;
     min-height: 600px;
-    background: #0a0a0f; /* 极客深空背景 */
-    position: relative;
-    overflow: hidden;
+    margin-top: 20px;
     border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* 悬浮的返回按钮 */
+  .back-to-lab {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(26, 29, 36, 0.85);
+    backdrop-filter: blur(10px);
+    color: #38bdf8;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .back-to-lab:hover {
+    background: #38bdf8;
+    color: #0f1115;
+    transform: translateX(-5px);
+  }
+
+  /* 画布容器 */
+  #pixel-security-container {
+    width: 100%;
+    height: 100%;
+    background: #0a0a0f;
+    position: relative;
   }
   #pixel-security-container canvas {
     display: block;
   }
 </style>
 
-<div id="pixel-security-container"></div>
+<div class="pixel-wrapper">
+  <!-- 悬浮返回按钮 -->
+  <a href="/lab/" class="back-to-lab">
+    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    返回沙盒
+  </a>
+
+  <!-- 3D 画布 -->
+  <div id="pixel-security-container"></div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
@@ -337,36 +381,33 @@
   renderer.setPixelRatio(window.devicePixelRatio);
   container.appendChild(renderer.domElement);
 
-  // 2. 创建像素网格系统 (复刻 Aikido 的“像素颗粒”基础)
+  // 2. 创建像素网格系统
   const pixelSize = 2;
-  const gridSize = 30; // 网格范围
+  const gridSize = 30;
   const spacing = 4;
   
   const pixelGeometry = new THREE.BoxGeometry(pixelSize, pixelSize, pixelSize);
   
-  // 使用荧光色系：蓝色 (攻击路径)、绿色 (代码)、橙色/黄色 (节点)
+  // 荧光色系
   const colors = [0x38bdf8, 0x34d399, 0xfbbf24, 0xf97316]; 
 
   const pixels = [];
   
   for (let x = -gridSize; x <= gridSize; x += spacing) {
     for (let z = -gridSize; z <= gridSize; z += spacing) {
-      // 随机决定是否生成像素，营造代码/数据的稀疏感
       if (Math.random() > 0.6) {
         const color = colors[Math.floor(Math.random() * colors.length)];
         const material = new THREE.MeshBasicMaterial({ 
           color: color,
           transparent: true,
-          opacity: Math.random() * 0.5 + 0.2 // 随机透明度，模拟闪烁
+          opacity: Math.random() * 0.5 + 0.2
         });
         
         const pixel = new THREE.Mesh(pixelGeometry, material);
         
-        // 给像素点随机的高度，形成起伏的“数据地形”
         const height = Math.random() * 5;
         pixel.position.set(x, height, z);
         
-        // 存储原始位置和随机速度，用于动画
         pixel.userData = {
           baseY: height,
           speed: Math.random() * 0.02 + 0.01,
@@ -379,7 +420,7 @@
     }
   }
 
-  // 3. 添加发光的“攻击路径”线条
+  // 3. 发光的“攻击路径”线条
   const linesMaterial = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.3 });
   
   for (let i = 0; i < 8; i++) {
@@ -400,7 +441,7 @@
     scene.add(line);
   }
 
-  // 4. 鼠标交互（让相机跟随鼠标轻微移动，产生“监控”感）
+  // 4. 鼠标交互
   let mouseX = 0;
   let mouseY = 0;
   let targetX = 0;
@@ -419,14 +460,11 @@
     
     const time = clock.getElapsedTime();
 
-    // 像素点起伏动画（模拟数据流动、代码运行）
     pixels.forEach(pixel => {
       pixel.position.y = pixel.userData.baseY + Math.sin(time * 2 + pixel.userData.offset) * 2;
-      // 透明度呼吸效果
       pixel.material.opacity = 0.2 + Math.sin(time * 3 + pixel.userData.offset) * 0.3;
     });
 
-    // 相机平滑跟随鼠标
     targetX = mouseX * 10;
     targetY = mouseY * 10;
     camera.position.x += (targetX - camera.position.x) * 0.05;
